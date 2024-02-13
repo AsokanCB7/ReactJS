@@ -1,7 +1,43 @@
-#heading {
-color:red;
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    border: 1px solid black;
 }
 
-.heading {
-    color:red;
-    }
+.logoContainer {
+    width:20px;
+}
+
+.imglogo {
+    width:100px;
+}
+
+.nav-items > ul {
+    display:flex;
+}
+
+.nav-items > ul >li {
+    font-size: 20px;
+    padding: 0px 20px;
+    list-style-type: none;
+}
+
+.res-container {
+    display:flex;
+    flex-wrap: wrap;
+    margin:5px;
+}
+.res-card {
+    padding: 5px;
+    width:200px;
+    height:400px;
+}
+.res-card:hover {
+    border:1px solid black;
+    cursor:pointer;
+}
+
+.res-img {
+    width:100%;
+}
