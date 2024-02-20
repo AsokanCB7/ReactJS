@@ -1,9 +1,14 @@
 import { LOGO_URL } from "../utils/config";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header=()=>{
 
     const [btnLogin, setBtnLogin] = useState('Login');
+
+    useEffect(()=>{
+        console.log('useeffect called');
+    });
     return(
         <div className="header">
             <div className="logoContainer">
@@ -13,9 +18,9 @@ const Header=()=>{
             </div>
                 <div className="nav-items">
                     <ul>
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>Contact Us</li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
                         <li>Cart</li>
                         <button className="btn-login" onClick={()=>{
                            btnLogin==="Login"? 
