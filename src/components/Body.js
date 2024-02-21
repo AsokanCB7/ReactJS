@@ -3,12 +3,15 @@ import { ResData } from "../utils/common";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 export const Body =()=>{
     const [data,setData]=useState([]);
     const [filterData,setFilterData]=useState([]);
 
     const [searchText,setSearchText]=useState("");
+
+    const onlineStatus = useOnlineStatus();
 
     useEffect(()=>{
         fetchData();
@@ -23,6 +26,12 @@ export const Body =()=>{
     }
     if(data.length ===0){
         return <Shimmer/>;
+    }
+
+    if(!onlineStatus){
+        return (
+            <h1>Seems you're internt is broken. Please check the connection.</h1>
+        )
     }
 
 
