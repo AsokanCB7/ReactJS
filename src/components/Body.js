@@ -37,12 +37,12 @@ export const Body =()=>{
 
     return(
         <div className="body">
-            <div className="search-rate-container">
-                <div className="search-container">
-                    <input className="searchText" value={searchText} onChange={(e)=>{
+            <div className="flex">
+                <div className="flex">
+                    <input className="border p-2 m-2 rounded-lg" value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value);
                     }} />
-                    <button className="btn-search" onClick={()=>{
+                    <button className="p-2 m-2 border bg-gray-100 rounded-lg  hover:bg-gray-300" onClick={()=>{
                         const filteredSearchRestaurant = data.filter((restaurant)=>{
                             //console.log(restaurant.card.card.info.name.toLowerCase().includes(searchText.toLowerCase()))
                            return restaurant.card.card.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -51,7 +51,7 @@ export const Body =()=>{
                         setFilterData(filteredSearchRestaurant);
                     }}>Search</button>
                 </div>
-                <div className="btn-toprated">
+                <div className="p-2 m-2 border bg-gray-100 rounded-lg hover:bg-gray-300">
                     <button onClick={()=>{
                         setData(data.filter((restaurant)=>restaurant.card.card.info.avgRatingString>4))
                     }}>
@@ -60,7 +60,7 @@ export const Body =()=>{
                 </div>
                
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                {filterData?.map((restaurant=>(
                 <Link key={restaurant.card.card.info.id} to={"/restaurant/"+restaurant.card.card.info.id}><RestaurantComponent  ResData={restaurant.card.card.info}/> </Link>
                )))
