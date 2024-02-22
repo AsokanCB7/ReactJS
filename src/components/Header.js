@@ -13,25 +13,23 @@ const Header=()=>{
         console.log('useeffect called');
     });
     return(
-        <div className="header">
-            <div className="logoContainer">
-                <div className="logo">
-                    <img className="imglogo" src={LOGO_URL}/>
+        <div className="flex justify-between shadow-lg bg-pink-100">
+                <div >
+                    <img className="w-28 rounded-lg" src={LOGO_URL}/>
                 </div>
-            </div>
-                <div className="nav-items">
-                    <ul>
-                    <li>Online Status : {onlineStatus? "Online" : "Offline"}</li>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/grocery">Grocery</Link></li>
-                        <li>Cart</li>
-                        <button className="btn-login" onClick={()=>{
+                <div >
+                    <ul className="flex flex-wrap" >
+                        <li className="p-4 m-4 align-middle">Online Status : {onlineStatus? "Online" : "Offline"}</li>
+                        <li className="p-4 m-4 align-middle"><Link to="/">Home</Link></li>
+                        <li className="p-4 m-4 align-middle"><Link to="/about">About Us</Link></li>
+                        <li className="p-4 m-4 align-middle"><Link to="/contact">Contact Us</Link></li>
+                        <li className="p-4 m-4 align-middle"><Link to="/grocery">Grocery</Link></li>
+                        <li className="p-4 m-4 align-middle">Cart</li>
+                        <li className="p-4 m-4 align-middle"><button className="border" onClick={()=>{
                            btnLogin==="Login"? 
                             setBtnLogin("Logout"):
                             setBtnLogin("Login");
-                        }}>{btnLogin}</button>
+                        }}>{btnLogin}</button></li>
                     </ul>
                 </div>
         </div>
