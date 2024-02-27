@@ -14,4 +14,16 @@ const RestaurantComponent =({ResData})=>{
             
     );
 }
+
+export const withPromotedLabel = (RestaurantComponent)=>{
+    return(props)=>{
+        return (
+            <div>
+                <label className="absolute bg-black text-white rounded-lg m-2 p-2">Promoted</label>
+                <RestaurantComponent {...props}/>
+            </div>
+            
+        )
+    }
+}
 export default RestaurantComponent;
